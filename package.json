@@ -1,0 +1,12 @@
+{
+  "name": "linkedin-speedrun-quiz-bot",
+  "module": "index.ts",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "type": "module",
+  "dependencies": {
+    "puppeteer": "^21.3.5",
+    "typescript": "^5.2.2"
+  }
+}
