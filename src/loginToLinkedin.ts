@@ -18,6 +18,7 @@ const loginToLinkedin = async (
 
   console.log("Click on the correct frog");
   await page.waitForNavigation();
+  console.log("Logged in successfully :frog:");
 };
 
 export default loginToLinkedin;

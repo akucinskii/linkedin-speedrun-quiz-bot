@@ -30,7 +30,9 @@ describe("Login to Linkedin", () => {
     );
 
     const gotoMock = page.goto as Mock<typeof page.goto>;
-    expect(gotoMock.mock.calls[0][0]).toEqual("https://www.linkedin.com/login");
+    expect(gotoMock.mock.calls[0][0]).toEqual(
+      "https://www.linkedin.com/login/us"
+    );
   });
 
   it("should type username", async () => {

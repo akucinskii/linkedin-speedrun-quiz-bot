@@ -13,8 +13,6 @@ const selectAnswerAndGoNext = async (page: Page, selectedCourse: string) => {
     question
   );
 
-  console.log(question);
-
   if (!answer) {
     throw new Error("Answer not found");
   }
@@ -29,13 +27,6 @@ const selectAnswerAndGoNext = async (page: Page, selectedCourse: string) => {
 
   for (let element of hiddenElements) {
     const elementText = await page.evaluate((el) => el.textContent, element);
-
-    console.log(
-      "elementText: ",
-      elementText,
-      "answer we need: ",
-      answerWithoutHyphen
-    );
 
     if (elementText.replace(/-/g, "")?.includes(answerWithoutHyphen.trim())) {
       answerElement = element;

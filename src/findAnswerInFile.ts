@@ -7,8 +7,6 @@ const findAnswerInFile = async (filePath: string, textToFind: string) => {
 
   let found = false;
 
-  console.log("textToFind", textToFind);
-
   for (let line of lines) {
     if (line.includes(textToFind)) {
       found = true;
