@@ -23,5 +23,9 @@ try {
 
   await startQuiz(page, SELECTED_QUIZ);
 } catch (err) {
-  page.close();
+  browser.close();
 }
+
+setTimeout(() => {
+  browser.close();
+}, 10000);
