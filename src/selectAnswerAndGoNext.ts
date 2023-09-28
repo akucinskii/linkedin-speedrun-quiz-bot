@@ -28,10 +28,7 @@ const selectAnswerAndGoNext = async (page: Page, selectedCourse: string) => {
   for (let element of hiddenElements) {
     const elementText = await page.evaluate((el) => el.textContent, element);
 
-    console.log(elementText);
     const formattedElementText = formatString(elementText);
-
-    console.log("AAA: ", formattedElementText, "ANSWER: ", formattedAnswer);
 
     if (formattedElementText?.includes(formattedAnswer)) {
       answerElement = element;
@@ -68,8 +65,6 @@ const selectAnswerAndGoNext = async (page: Page, selectedCourse: string) => {
       const formattedCodeBlockText = formatString(
         codeBlockTextWithoutLineNumbers
       );
-
-      console.log(formattedCodeBlockText, answer);
 
       if (formattedCodeBlockText?.includes(answer)) {
         answerElement = codeBlock;

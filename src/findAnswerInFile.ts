@@ -23,7 +23,6 @@ const findAnswerInFile = async (filePath: string, textToFind: string) => {
 
     // First we need to find the question
 
-    console.log("LINE: ", line, " QUESTION: ", textToFind);
     if (line.includes(correctTextToFind)) {
       console.log("Question found: ", line);
       foundQuestion = true;
@@ -47,11 +46,6 @@ const findAnswerInFile = async (filePath: string, textToFind: string) => {
     }
 
     // The answer can be multiple lines so we need to account for that as well
-    if (foundAnswer && foundQuestion) {
-      console.log("ANSWER FOUND:", answer);
-      console.log("ANSWER FOUND LINE:", line);
-    }
-
     if (notFormattedLine.startsWith("-") && foundAnswer && foundQuestion) {
       break;
     }
@@ -83,6 +77,9 @@ const findAnswerInFile = async (filePath: string, textToFind: string) => {
   }
 
   answer = formatString(answer).replaceAll("**", "");
+
+  // Just console it if something breaks in the linkedin quiz
+  console.log("ANSWER FOUND:", answer);
 
   return answer;
 };
