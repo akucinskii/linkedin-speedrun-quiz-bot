@@ -3,8 +3,13 @@ import loginToLinkedin from "./src/loginToLinkedin";
 import startQuiz from "./src/startQuiz";
 
 const SELECTED_QUIZ = Bun.argv[2];
+const DEBUG = Bun.argv.includes("--debug");
 const USERNAME = Bun.env.LINKEDIN_USERNAME;
 const PASSWORD = Bun.env.LINKEDIN_PASSWORD;
+
+if (DEBUG) {
+  console.log("DEBUG MODE");
+}
 
 if (!SELECTED_QUIZ) {
   throw new Error("Missing quiz name");
@@ -23,9 +28,14 @@ try {
 
   await startQuiz(page, SELECTED_QUIZ);
 } catch (err) {
-  browser.close();
+  console.error(err);
+  if (!DEBUG) {
+    browser.close();
+  }
 }
 
-setTimeout(() => {
-  browser.close();
-}, 10000);
+if (!DEBUG) {
+  setTimeout(() => {
+    browser.close();
+  }, 10000);
+}

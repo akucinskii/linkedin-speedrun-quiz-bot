@@ -2,6 +2,8 @@ import { Mock, describe, expect, it, mock } from "bun:test";
 import loginToLinkedin from "./loginToLinkedin";
 import { AnyFunction } from "bun";
 
+//TODO: move this to __tests__ folder
+
 interface Page {
   goto: AnyFunction;
   type: AnyFunction;
