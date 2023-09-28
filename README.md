@@ -11,7 +11,7 @@ git clone this repo to main folder to make it work https://github.com/Ebazhanov/
 git clone https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes.git
 ```
 
-Add your login and password to .env file. dont worry its all local file
+Add your login and password to .env file. dont worry its all local 
 ```bash
 LINKEDIN_USERNAME=YOUR_USERNAME
 LINKEDIN_PASSWORD=YOUR_PASSWORD
