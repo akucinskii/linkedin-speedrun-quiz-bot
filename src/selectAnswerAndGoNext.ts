@@ -12,8 +12,9 @@ const selectAnswerAndGoNext = async (page: Page, selectedCourse: string) => {
   let answer = "";
 
   answer = await findAnswerInFile(
-    // `linkedin-skill-assessments-quizzes/${selectedCourse}/${selectedCourse}-quiz.md`,
-    `linkedin-skill-assessments-quizzes/microsoft-power-point/microsoft-power-point-quiz.md`,
+    `linkedin-skill-assessments-quizzes/${selectedCourse}/${selectedCourse}-quiz.md`,
+    // To run powerpoint quiz:
+    // `linkedin-skill-assessments-quizzes/microsoft-power-point/microsoft-power-point-quiz.md`,
     question
   );
 
